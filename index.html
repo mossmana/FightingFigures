@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<!-- Copyright 2016 - Killer Android -->
+  <title>Fighting Figures</title>
+  <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/cast/sdk/libs/games/1.0.0/cast_games_receiver.js"></script>
+  <script type="text/javascript" src="ff_constants.js"></script>
+  <script type="text/javascript" src="ff_stickman.js"></script>
+  <script type="text/javascript" src="ff_game.js"></script>
+  <script type="text/javascript" src="ff_main.js"></script>
+  <style type="text/css">
+  body {
+    overflow:hidden;
+    color:#3D3C3D;
+    background-color:#276809;
+    height:720PX;
+    width:1280PX;
+    font-family:Verdana, Geneva, sans-serif;
+  }
+  h2 {
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+  }
+  h2#healer {
+    color:#FFFFFF;
+  }
+  h2#caster {
+    color:#000000;
+  }
+  h2#attacker {
+    color:#F7471C;
+  }
+  h2#defender {
+    color:#4E71E9;
+  }
+  #players {
+    width:60%;
+    overflow:hidden;
+    margin-top: 25px;
+  }
+  #mob {
+    width:40%;
+    overflow:hidden;
+    margin-top: 75px;
+  }
+  .left {
+    float: left;
+  }
+  textarea.message {
+    width: 400px;
+    height: 100px;
+    padding: 5px;
+    background-color: #CCCCCC;
+    font-family: font-family:Verdana, Geneva, sans-serif;
+  }
+  canvas.figure {
+    float:right;
+    width: 200px;
+    height: 125px;
+    margin-right: 75px;
+  }
+  canvas.healer {
+    background-color: #FFFFFF;
+  }
+  canvas.caster {
+    background-color: #000000;
+  }
+  canvas.attacker {
+    background-color: #F7471C;
+  }
+  canvas.defender {
+    background-color: #4E71E9;
+  }
+</style>
+  </head>
+  <body onload="initGame()">
+    <div id="players" class="left">
+      <div class="left">
+        <h2 id="healer">Healer</h2>
+        <textarea id="message_healer" class="message"></textarea>
+      </div>
+      <canvas id='player_canvas_0' class="figure healer"></canvas>
+      <div class="left">
+        <h2 id="caster">Caster</h2>
+        <textarea id="message_caster" class="message"></textarea>
+      </div>
+      <canvas id='player_canvas_1' class="figure caster"></canvas>
+      <div class="left">
+        <h2 id="attacker">Attacker</h2>
+        <textarea id="message_attacker" class="message"></textarea>
+      </div>
+      <canvas id='player_canvas_2' class="figure attacker"></canvas>
+      <div class="left">
+        <h2 id="defender">Defender</h2>
+        <textarea id="message_defender" class="message"></textarea>
+      </div>
+      <canvas id='player_canvas_3' class="figure defender"></canvas>
+    </div>
+    <div id="mob" class="left">
+      <img src="https://s-media-cache-ak0.pinimg.com/236x/44/06/46/440646fba573334ab2657661088bd5a1.jpg"
+          height="500"/>
+    </div>
+  </body>
+</html>

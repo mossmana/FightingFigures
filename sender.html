@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fighting Figures Sender</title>
+    <script type="text/javascript" src="closure-library/closure/goog/base.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadGamesSDK"></script>
+    <script type="text/javascript" src="ff_constants.js"></script>
+    <script type="text/javascript" src="ff_sender.js"></script>
+  </head>
+  <body>
+    <script>
+      window['__onGCastApiAvailable'] = function(loaded, errorInfo) {
+        if (loaded) {
+          initializeCastApi();
+        } else {
+          console.error("Cast Sender SDK failed to load:");
+          console.dir(errorInfo);
+        }
+      };
+    </script>
+    <h1>Fighting Figures</h1>
+    <h2>Healer</h2>
+    <button onclick="addHealer(); return false;">Add Healer</button>
+    <input type="text" id="message_healer"/><button onclick="sendMessage('healer')">Send</button>
+    <button onclick="removeHealer(); return false;">Remove Healer</button>
+    <h2>Caster</h2>
+    <button onclick="addCaster(); return false;">Add Caster</button>
+    <input type="text" id="message_caster"/><button onclick="sendMessage('caster')">Send</button>
+    <button onclick="removeCaster(); return false;">Remove Caster</button>
+    <h2>Attacker</h2>
+    <button onclick="addAttacker(); return false;">Add Attacker</button>
+    <input type="text" id="message_attacker"/><button onclick="sendMessage('attacker')">Send</button>
+    <button onclick="removeAttacker(); return false;">Remove Attacker</button>
+    <h2>Defender</h2>
+    <button onclick="addDefender(); return false;">Add Defender</button>
+    <input type="text" id="message_defender"/><button onclick="sendMessage('defender')">Send</button>
+    <button onclick="removeDefender(); return false;">Remove Defender</button>
+  </body>
+</html>
