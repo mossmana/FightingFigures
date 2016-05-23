@@ -93,7 +93,7 @@ function addDefender() {
   addPlayer(playerId);
 }
 
-function removeAttacker() {
+function removeDefender() {
   var playerId = net.killerandroid.fightingfigures.FFConstants.PLAYER_ID_PREFIX + "defender";
   removePlayer(playerId);
 }
