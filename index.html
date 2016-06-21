@@ -33,49 +33,61 @@ limitations under the License.
     height:720PX;
     width:1280PX;
     font-family:Verdana, Geneva, sans-serif;
+    margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
   h2 {
     text-align: center;
-    margin: 0px;
-    padding: 10px;
+    padding: 5px;
+    font-size: medium;
   }
-  h2#healer {
-    color:#FFFFFF;
+  h2.player {
+    -webkit-column-count:3;
   }
-  h2#caster {
-    color:#000000;
+  h2.healer {
+    background-color:#FFFFFF;
+    color: black;
   }
-  h2#attacker {
-    color:#F7471C;
+  h2.caster {
+    background-color:#000000;
+    color: white;
   }
-  h2#defender {
-    color:#4E71E9;
+  h2.attacker {
+    background-color:#F7471C;
+    color: white;
+  }
+  h2.defender {
+    background-color:#4E71E9;
+    color: black;
+  }
+  h2.mob {
+    color:LightGreen;
   }
   #players {
-    width:60%;
+    width:65%;
     overflow:hidden;
-    margin-top: 25px;
+    padding: 0px;
   }
   #mob {
-    width:40%;
+    width:35%;
     overflow:hidden;
-    margin-top: 75px;
   }
   .left {
     float: left;
   }
   textarea.message {
-    width: 400px;
+    width: 350px;
     height: 100px;
-    padding: 5px;
     background-color: #CCCCCC;
     font-family: font-family:Verdana, Geneva, sans-serif;
   }
+  textarea.player {
+    margin-left: 25px;
+  }
   canvas.figure {
-    float:right;
     width: 200px;
-    height: 125px;
-    margin-right: 75px;
+    height: 105px;
   }
   canvas.healer {
     background-color: #FFFFFF;
@@ -89,34 +101,70 @@ limitations under the License.
   canvas.defender {
     background-color: #4E71E9;
   }
+  img.damage_marker {
+    height: 50px;
+  }
+  img.health_token {
+    height: 20px;
+    margin-bottom: 5px;
+  }
 </style>
   </head>
   <body onload="initGame()">
     <div id="players" class="left">
       <div class="left">
-        <h2 id="healer">Healer</h2>
-        <textarea id="message_healer" class="message"></textarea>
+        <h2 class="healer player">Healer</h2>
+        <textarea id="message_healer" class="message player left"></textarea>
+        <canvas id="player_canvas_0" class="figure healer left"></canvas>
+        <div class="left">
+          <img id="healer_health_token_1" src="health-token.jpg" class="health_token"/></br>
+          <img id="healer_health_token_2" src="health-token.jpg" class="health_token"/></br>
+          <img id="healer_health_token_2" src="health-token.jpg" class="health_token"/></br>
+        </div>
       </div>
-      <canvas id='player_canvas_0' class="figure healer"></canvas>
       <div class="left">
-        <h2 id="caster">Caster</h2>
-        <textarea id="message_caster" class="message"></textarea>
+        <h2 class="caster player">Caster</h2>
+        <textarea id="message_caster" class="message player left"></textarea>
+        <canvas id="player_canvas_1" class="figure caster left"></canvas>
+        <div class="left">
+          <img id="caster_health_token_1" src="health-token.jpg" class="health_token"/></br>
+          <img id="caster_health_token_2" src="health-token.jpg" class="health_token"/></br>
+          <img id="caster_health_token_2" src="health-token.jpg" class="health_token"/></br>
+        </div>
       </div>
-      <canvas id='player_canvas_1' class="figure caster"></canvas>
       <div class="left">
-        <h2 id="attacker">Attacker</h2>
-        <textarea id="message_attacker" class="message"></textarea>
+        <h2 class="attacker player">Attacker</h2>
+        <textarea id="message_attacker" class="message player left"></textarea>
+        <canvas id="player_canvas_2" class="figure attacker left"></canvas>
+        <div class="left">
+          <img id="attacker_health_token_1" src="health-token.jpg" class="health_token"/></br>
+          <img id="attacker_health_token_2" src="health-token.jpg" class="health_token"/></br>
+          <img id="attacker_health_token_2" src="health-token.jpg" class="health_token"/></br>
+        </div>
       </div>
-      <canvas id='player_canvas_2' class="figure attacker"></canvas>
       <div class="left">
-        <h2 id="defender">Defender</h2>
-        <textarea id="message_defender" class="message"></textarea>
+        <h2 class="defender player">Defender</h2>
+        <textarea id="message_defender" class="message player left"></textarea>
+        <canvas id="player_canvas_3" class="figure defender left"></canvas>
+        <div class="left">
+          <img id="defender_health_token_1" src="health-token.jpg" class="health_token"/></br>
+          <img id="defender_health_token_2" src="health-token.jpg" class="health_token"/></br>
+          <img id="defender_health_token_2" src="health-token.jpg" class="health_token"/></br>
+        </div>
       </div>
-      <canvas id='player_canvas_3' class="figure defender"></canvas>
     </div>
     <div id="mob" class="left">
-      <img src="https://s-media-cache-ak0.pinimg.com/236x/44/06/46/440646fba573334ab2657661088bd5a1.jpg"
+      <img class="mob" src="mob-1.jpg"
           height="500"/>
+      <div class="left">
+          <img id="damage_marker_1" src="damage-marker.jpg" class="damage_marker"/>
+          <img id="damage_marker_2" src="damage-marker.jpg" class="damage_marker"/>
+          <img id="damage_marker_3" src="damage-marker.jpg" class="damage_marker"/>
+          <img id="damage_marker_4" src="damage-marker.jpg" class="damage_marker"/>
+          <img id="damage_marker_5" src="damage-marker.jpg" class="damage_marker"/>
+          <img id="damage_marker_6" src="damage-marker.jpg" class="damage_marker"/>
+      </div>
+      <textarea id="message_mob" class="message"></textarea>
     </div>
   </body>
 </html>
