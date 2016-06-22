@@ -93,7 +93,7 @@ function addDefender() {
   addPlayer(playerId);
 }
 
-function removeDefender() {
+function removeDefemder() {
   var playerId = net.killerandroid.fightingfigures.FFConstants.PLAYER_ID_PREFIX + "defender";
   removePlayer(playerId);
 }
@@ -126,5 +126,15 @@ function sendMessage(id) {
     net.killerandroid.fightingfigures.FFConstants.MESSAGE_TEXT;
   message[net.killerandroid.fightingfigures.FFConstants.MESSAGE_VALUE] =
     document.getElementById('message_' + id).value;
+  gameManagerClient.sendGameMessageWithPlayerId(playerId, message);
+}
+
+function sendCommand(id, value) {
+  var playerId = net.killerandroid.fightingfigures.FFConstants.PLAYER_ID_PREFIX + id;
+  console.log("Sending command: " + playerId);
+  var message = {};
+  message[net.killerandroid.fightingfigures.FFConstants.MESSAGE_TYPE] =
+    net.killerandroid.fightingfigures.FFConstants.MESSAGE_COMMAND;
+  message[net.killerandroid.fightingfigures.FFConstants.MESSAGE_VALUE] = value;
   gameManagerClient.sendGameMessageWithPlayerId(playerId, message);
 }

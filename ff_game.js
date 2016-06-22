@@ -105,11 +105,13 @@ net.killerandroid.fightingfigures.FFGame.prototype.onMessageReceived = function(
   var type = event.requestExtraMessageData[
       net.killerandroid.fightingfigures.FFConstants.MESSAGE_TYPE];
   console.log("Message type = " + type);
+  var value = event.requestExtraMessageData[
+    net.killerandroid.fightingfigures.FFConstants.MESSAGE_VALUE];
+  console.log("Message value = " + value);
   if (type === net.killerandroid.fightingfigures.FFConstants.MESSAGE_TEXT) {
-    this.showMessage(event.playerInfo.playerId, event.requestExtraMessageData[
-      net.killerandroid.fightingfigures.FFConstants.MESSAGE_VALUE]);
+    this.showMessage(event.playerInfo.playerId, value);
   } else if (type === net.killerandroid.fightingfigures.FFConstants.MESSAGE_COMMAND) {
-    // TODO
+    this.performCommand(event.playerInfo.playerId, value);
   }
 }
 
@@ -141,4 +143,9 @@ net.killerandroid.fightingfigures.FFGame.prototype.showMessage = function(player
   console.log("Show text for " + playerId + " = " + text);
   var id = playerId.split(":")[1];
   document.getElementById("message_" + id).value += "\n" + text;
+}
+
+net.killerandroid.fightingfigures.FFGame.prototype.performCommand = function(playerId, command) {
+  console.log("Perform command for " + playerId + " = " + command);
+  this.showMessage(playerId, ">>> " + command);
 }

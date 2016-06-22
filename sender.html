@@ -21,6 +21,7 @@ limitations under the License.
     <script type="text/javascript" src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadGamesSDK"></script>
     <script type="text/javascript" src="ff_constants.js"></script>
     <script type="text/javascript" src="ff_sender.js"></script>
+    <script type="text/javascript" src="ff_commands.js"></script>
   </head>
   <body>
     <script>
@@ -35,20 +36,59 @@ limitations under the License.
     </script>
     <h1>Fighting Figures</h1>
     <h2>Healer</h2>
-    <button onclick="addHealer(); return false;">Add Healer</button>
-    <input type="text" id="message_healer"/><button onclick="sendMessage('healer')">Send</button>
-    <button onclick="removeHealer(); return false;">Remove Healer</button>
+    <p>
+      <button onclick="addHealer();">Add Healer</button>
+      <button onclick="removeHealer();">Remove Healer</button>
+    </p>
+    <p><input type="text" id="message_healer"/><button onclick="sendMessage('healer')">Send</button></p>
+    <p>
+      <button onclick="sendCommand('healer',net.killerandroid.fightingfigures.FFCommands.HEAL_SELF);">Heal Self</button>
+      <button onclick="sendCommand('healer',net.killerandroid.fightingfigures.FFCommands.HEAL_CASTER);">Heal Caster</button>
+      <button onclick="sendCommand('healer',net.killerandroid.fightingfigures.FFCommands.HEAL_ATTACKER);">Heal Attacker</button>
+      <button onclick="sendCommand('healer',net.killerandroid.fightingfigures.FFCommands.HEAL_DEFENDER);">Heal Defender</button>
+      <button onclick="sendCommand('healer',net.killerandroid.fightingfigures.FFCommands.HEAL_ALL);">Heal All</button>
+    </p>
+    <hr/>
     <h2>Caster</h2>
-    <button onclick="addCaster(); return false;">Add Caster</button>
-    <input type="text" id="message_caster"/><button onclick="sendMessage('caster')">Send</button>
-    <button onclick="removeCaster(); return false;">Remove Caster</button>
+    <p>
+      <button onclick="addCaster();">Add Caster</button>
+      <button onclick="removeCaster();">Remove Caster</button>
+    </p>
+    <p><input type="text" id="message_caster"/><button onclick="sendMessage('caster')">Send</button></p>
+    <p>
+      <button onclick="sendCommand('caster',net.killerandroid.fightingfigures.FFCommands.WEAKEN);">Weaken</button>
+      <button onclick="sendCommand('caster',net.killerandroid.fightingfigures.FFCommands.STUN);">Stun</button>
+      <button onclick="sendCommand('caster',net.killerandroid.fightingfigures.FFCommands.NUKE);">Nuke</button>
+      <button onclick="sendCommand('caster',net.killerandroid.fightingfigures.FFCommands.SLOW);">Slow</button>
+      <button onclick="sendCommand('caster',net.killerandroid.fightingfigures.FFCommands.DOT);">Dot</button>
+    </p>
+    <hr/>
     <h2>Attacker</h2>
-    <button onclick="addAttacker(); return false;">Add Attacker</button>
-    <input type="text" id="message_attacker"/><button onclick="sendMessage('attacker')">Send</button>
-    <button onclick="removeAttacker(); return false;">Remove Attacker</button>
+    <p>
+      <button onclick="addAttacker();">Add Attacker</button>
+      <button onclick="removeAttacker();">Remove Attacker</button>
+    </p>
+    <p><input type="text" id="message_attacker"/><button onclick="sendMessage('attacker')">Send</button></p>
+    <p>
+      <button onclick="sendCommand('attacker',net.killerandroid.fightingfigures.FFCommands.STAB_ATTACK);">Stab Attack</button>
+      <button onclick="sendCommand('attacker',net.killerandroid.fightingfigures.FFCommands.SLASH_ATTACK);">Slash Attack</button>
+      <button onclick="sendCommand('attacker',net.killerandroid.fightingfigures.FFCommands.RANGED_ATTACK);">Ranged Attack</button>
+      <button onclick="sendCommand('attacker',net.killerandroid.fightingfigures.FFCommands.CHARGED_ATTACK);">Charged Attack</button>
+      <button onclick="sendCommand('attacker',net.killerandroid.fightingfigures.FFCommands.CLOSE_ATTACK);">Close Attack</button>
+    </p>
+    <hr/>
     <h2>Defender</h2>
-    <button onclick="addDefender(); return false;">Add Defender</button>
-    <input type="text" id="message_defender"/><button onclick="sendMessage('defender')">Send</button>
-    <button onclick="removeDefender(); return false;">Remove Defender</button>
+    <p>
+      <button onclick="addDefender();">Add Defender</button>
+      <button onclick="removeDefender();">Remove Defender</button>
+    </p>
+    <p><input type="text" id="message_defender"/><button onclick="sendMessage('defender')">Send</button></p>
+    <p>
+      <button onclick="sendCommand('defender',net.killerandroid.fightingfigures.FFCommands.TAUNT);">Taunt</button>
+      <button onclick="sendCommand('defender',net.killerandroid.fightingfigures.FFCommands.THROW_SHIELD);">Throw Shield</button>
+      <button onclick="sendCommand('defender',net.killerandroid.fightingfigures.FFCommands.DEFLECT_DAMAGE);">Deflect Damage</button>
+      <button onclick="sendCommand('defender',net.killerandroid.fightingfigures.FFCommands.BASH_SHIELD);">Bash Shield</button>
+      <button onclick="sendCommand('defender',net.killerandroid.fightingfigures.FFCommands.ABSORB_DAMAGE);">Absorb Damage</button>
+    </p>
   </body>
 </html>
