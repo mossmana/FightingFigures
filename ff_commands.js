@@ -62,45 +62,47 @@ net.killerandroid.fightingfigures.FFCommands.BASH_SHIELD = 'bash_shield';
 net.killerandroid.fightingfigures.FFCommands.ABSORB_DAMAGE = 'absorb_damage';
 
 net.killerandroid.fightingfigures.FFCommands.prototype.handle = function(playerId, command) {
-  if (command === this.HEAL_SELF) {
+  console.log("Handling command = " + command);
+  console.log("Matching command = " + net.killerandroid.fightingfigures.FFCommands.STAB_ATTACK);
+  if (command === net.killerandroid.fightingfigures.FFCommands.HEAL_SELF) {
     // TODO
-  } else if (command === this.HEAL_CASTER) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.HEAL_CASTER) {
     // TODO
-  } else if (command === this.HEAL_ATTACKER) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.HEAL_ATTACKER) {
     // TODO
-  } else if (command === this.HEAL_DEFENDER) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.HEAL_DEFENDER) {
     // TODO
-  } else if (command === this.HEAL_ALL) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.HEAL_ALL) {
     // TODO
-  } else if (command === this.WEAKEN) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.WEAKEN) {
     // TODO
-  } else if (command === this.STUN) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.STUN) {
     // TODO
-  } else if (command === this.NUKE) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.NUKE) {
     // TODO
-  } else if (command === this.SLOW) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.SLOW) {
     // TODO
-  } else if (command === this.DOT) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.DOT) {
     // TODO
-  } else if (command === this.STAB_ATTACK) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.STAB_ATTACK) {
     this.performStabCommand(playerId);
-  } else if (command === this.SLASH_ATTACK) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.SLASH_ATTACK) {
     // TODO
-  } else if (command === this.RANGED_ATTACK) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.RANGED_ATTACK) {
     // TODO
-  } else if (command === this.CHARGED_ATTACK) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.CHARGED_ATTACK) {
     // TODO
-  } else if (command === this.CLOSE_ATTACK) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.CLOSE_ATTACK) {
     // TODO
-  } else if (command === this.TAUNT) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.TAUNT) {
     // TODO
-  } else if (command === this.THROW_SHIELD) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.THROW_SHIELD) {
     // TODO
-  } else if (command === this.DEFLECT_DAMAGE) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.DEFLECT_DAMAGE) {
     // TODO
-  } else if (command === this.BASH_SHIELD) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.BASH_SHIELD) {
     // TODO
-  } else if (command === this.ABSORB_DAMAGE) {
+  } else if (command === net.killerandroid.fightingfigures.FFCommands.ABSORB_DAMAGE) {
     // TODO
   }
 }

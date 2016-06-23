@@ -22,6 +22,7 @@ goog.require('cast.receiver.games.PlayerState');
 goog.require('cast.receiver.games.StatusCode');
 goog.require('net.killerandroid.fightingfigures.FFConstants');
 goog.require('net.killerandroid.fightingfigures.FFStickman');
+goog.require('net.killerandroid.fightingfigures.FFCommands');
 
 net.killerandroid.fightingfigures.FFGame = function(gameManager) {
   console.log("Initializing game!");
@@ -37,6 +38,7 @@ net.killerandroid.fightingfigures.FFGame = function(gameManager) {
   this.boundMessageReceivedCallback = this.onMessageReceived.bind(this);
   this.boundPlayerAvailableCallback = this.onPlayerAvailable.bind(this);
   this.boundPlayerQuitCallback = this.onPlayerQuit.bind(this);
+  this.commands = new net.killerandroid.fightingfigures.FFCommands();
 }
 
 net.killerandroid.fightingfigures.FFGame.prototype.start = function() {
@@ -148,4 +150,5 @@ net.killerandroid.fightingfigures.FFGame.prototype.showMessage = function(player
 net.killerandroid.fightingfigures.FFGame.prototype.performCommand = function(playerId, command) {
   console.log("Perform command for " + playerId + " = " + command);
   this.showMessage(playerId, ">>> " + command);
+  this.commands.handle(playerId, command);
 }
