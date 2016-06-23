@@ -60,3 +60,52 @@ net.killerandroid.fightingfigures.FFCommands.DEFLECT_DAMAGE = 'deflect_damage';
 net.killerandroid.fightingfigures.FFCommands.BASH_SHIELD = 'bash_shield';
 
 net.killerandroid.fightingfigures.FFCommands.ABSORB_DAMAGE = 'absorb_damage';
+
+net.killerandroid.fightingfigures.FFCommands.prototype.handle = function(playerId, command) {
+  if (command === this.HEAL_SELF) {
+    // TODO
+  } else if (command === this.HEAL_CASTER) {
+    // TODO
+  } else if (command === this.HEAL_ATTACKER) {
+    // TODO
+  } else if (command === this.HEAL_DEFENDER) {
+    // TODO
+  } else if (command === this.HEAL_ALL) {
+    // TODO
+  } else if (command === this.WEAKEN) {
+    // TODO
+  } else if (command === this.STUN) {
+    // TODO
+  } else if (command === this.NUKE) {
+    // TODO
+  } else if (command === this.SLOW) {
+    // TODO
+  } else if (command === this.DOT) {
+    // TODO
+  } else if (command === this.STAB_ATTACK) {
+    this.performStabCommand(playerId);
+  } else if (command === this.SLASH_ATTACK) {
+    // TODO
+  } else if (command === this.RANGED_ATTACK) {
+    // TODO
+  } else if (command === this.CHARGED_ATTACK) {
+    // TODO
+  } else if (command === this.CLOSE_ATTACK) {
+    // TODO
+  } else if (command === this.TAUNT) {
+    // TODO
+  } else if (command === this.THROW_SHIELD) {
+    // TODO
+  } else if (command === this.DEFLECT_DAMAGE) {
+    // TODO
+  } else if (command === this.BASH_SHIELD) {
+    // TODO
+  } else if (command === this.ABSORB_DAMAGE) {
+    // TODO
+  }
+}
+
+net.killerandroid.fightingfigures.FFCommands.prototype.performStabCommand = function(playerId) {
+  console.log("Perform stab command");
+  document.getElementById("message_mob").value += "\nOuch!!!!";
+}

@@ -120,7 +120,6 @@ function removePlayer(playerId) {
 
 function sendMessage(id) {
   var playerId = net.killerandroid.fightingfigures.FFConstants.PLAYER_ID_PREFIX + id;
-  console.log("Sending message: " + playerId);
   var message = {};
   message[net.killerandroid.fightingfigures.FFConstants.MESSAGE_TYPE] =
     net.killerandroid.fightingfigures.FFConstants.MESSAGE_TEXT;
@@ -131,7 +130,6 @@ function sendMessage(id) {
 
 function sendCommand(id, value) {
   var playerId = net.killerandroid.fightingfigures.FFConstants.PLAYER_ID_PREFIX + id;
-  console.log("Sending command: " + playerId);
   var message = {};
   message[net.killerandroid.fightingfigures.FFConstants.MESSAGE_TYPE] =
     net.killerandroid.fightingfigures.FFConstants.MESSAGE_COMMAND;
