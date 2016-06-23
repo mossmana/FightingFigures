@@ -109,5 +109,15 @@ net.killerandroid.fightingfigures.FFCommands.prototype.handle = function(playerI
 
 net.killerandroid.fightingfigures.FFCommands.prototype.performStabCommand = function(playerId) {
   console.log("Perform stab command");
-  document.getElementById("message_mob").value += "\nOuch!!!!";
+  this.dealDamage("Ouch, that hurt!!!!","Ha ha, you missed!");
+}
+
+net.killerandroid.fightingfigures.FFCommands.prototype.dealDamage = function(successReaction, failReaction) {
+  var rand = Math.floor(Math.random() * 5); // 1 in 5 chance of success
+  var reaction = failReaction;
+  if (rand == 0) {
+    reaction = successReaction;
+  }
+  document.getElementById("message_mob").scrollTop = document.getElementById("message_mob").scrollHeight;
+  document.getElementById("message_mob").value += "\n" + reaction;
 }

@@ -144,6 +144,7 @@ net.killerandroid.fightingfigures.FFGame.prototype.removePlayer = function(playe
 net.killerandroid.fightingfigures.FFGame.prototype.showMessage = function(playerId, text) {
   console.log("Show text for " + playerId + " = " + text);
   var id = playerId.split(":")[1];
+  document.getElementById("message_" + id).scrollTop = document.getElementById("message_" + id).scrollHeight;
   document.getElementById("message_" + id).value += "\n" + text;
 }
 
